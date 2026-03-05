@@ -1,16 +1,12 @@
 function Box({
   label,
   items,
-  className,
 }: {
   label: string;
   items: string[];
-  className?: string;
 }) {
   return (
-    <div
-      className={`rounded-lg border border-border bg-card/50 p-4 ${className ?? ""}`}
-    >
+    <div className="rounded-md border border-border bg-card p-4">
       <div className="mb-2 text-xs font-medium uppercase tracking-widest text-accent">
         {label}
       </div>
@@ -33,7 +29,7 @@ function CoreBox({
   subtitle: string;
 }) {
   return (
-    <div className="rounded-lg border border-accent/20 bg-accent/5 px-5 py-3 text-center">
+    <div className="rounded-md border border-border bg-surface px-5 py-3 text-center">
       <div className="text-sm font-semibold text-foreground">{title}</div>
       <div className="text-xs text-muted">{subtitle}</div>
     </div>
@@ -43,8 +39,13 @@ function CoreBox({
 function Arrow() {
   return (
     <div className="flex justify-center py-1">
-      <svg width="12" height="20" viewBox="0 0 12 20" className="text-accent/40">
-        <path d="M6 0 L6 14 M2 10 L6 18 L10 10" stroke="currentColor" fill="none" strokeWidth="1.5" />
+      <svg width="12" height="18" viewBox="0 0 12 18" className="text-border">
+        <path
+          d="M6 0 L6 12 M2 9 L6 16 L10 9"
+          stroke="currentColor"
+          fill="none"
+          strokeWidth="1.5"
+        />
       </svg>
     </div>
   );
@@ -53,8 +54,13 @@ function Arrow() {
 function HArrow() {
   return (
     <div className="flex items-center px-1">
-      <svg width="24" height="12" viewBox="0 0 24 12" className="text-accent/40">
-        <path d="M0 6 L18 6 M14 2 L22 6 L14 10" stroke="currentColor" fill="none" strokeWidth="1.5" />
+      <svg width="24" height="12" viewBox="0 0 24 12" className="text-border">
+        <path
+          d="M0 6 L18 6 M14 2 L22 6 L14 10"
+          stroke="currentColor"
+          fill="none"
+          strokeWidth="1.5"
+        />
       </svg>
     </div>
   );
@@ -68,15 +74,12 @@ export function Architecture() {
           Architecture
         </h2>
 
-        <div className="overflow-hidden rounded-xl border border-border bg-code p-6 sm:p-8">
-          {/* Title */}
-          <div className="mb-6 text-center text-lg font-bold text-foreground/80">
+        <div className="overflow-hidden rounded-lg border border-border bg-code p-6 sm:p-8">
+          <div className="mb-6 text-center text-base font-bold text-foreground/70">
             reefagent
           </div>
 
-          {/* Main 3-column layout */}
           <div className="grid gap-4 sm:gap-6 md:grid-cols-[1fr_auto_1.2fr_auto_1fr]">
-            {/* Left column — Channels + Integrations */}
             <div className="space-y-4">
               <Box
                 label="Channels"
@@ -99,40 +102,24 @@ export function Architecture() {
               />
             </div>
 
-            {/* Arrow left → center */}
             <div className="hidden items-center md:flex">
               <HArrow />
             </div>
 
-            {/* Center column — Core pipeline */}
             <div className="flex flex-col items-stretch justify-center space-y-1">
-              <CoreBox
-                title="Model Router"
-                subtitle="multi-provider"
-              />
+              <CoreBox title="Model Router" subtitle="multi-provider" />
               <Arrow />
-              <CoreBox
-                title="Agent Runner"
-                subtitle="+ Tool Sandbox"
-              />
+              <CoreBox title="Agent Runner" subtitle="+ Tool Sandbox" />
               <Arrow />
-              <CoreBox
-                title="Think Loop"
-                subtitle="autonomous"
-              />
+              <CoreBox title="Think Loop" subtitle="autonomous" />
               <Arrow />
-              <CoreBox
-                title="Soul & Identity"
-                subtitle="self-evolving"
-              />
+              <CoreBox title="Soul & Identity" subtitle="self-evolving" />
             </div>
 
-            {/* Arrow center → right */}
             <div className="hidden items-center md:flex">
               <HArrow />
             </div>
 
-            {/* Right column — Storage + Safety */}
             <div className="space-y-4">
               <Box
                 label="Storage"
@@ -145,14 +132,8 @@ export function Architecture() {
                   "Hybrid Search",
                 ]}
               />
-              <Box
-                label="Goals"
-                items={["Goal Engine", "Hierarchical"]}
-              />
-              <Box
-                label="Safety"
-                items={["Safety Tiers", "Circuit Breakers"]}
-              />
+              <Box label="Goals" items={["Goal Engine", "Hierarchical"]} />
+              <Box label="Safety" items={["Safety Tiers", "Circuit Breakers"]} />
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ const steps = [
   },
   {
     title: "Launch",
-    code: 'bot gateway    # reactive \u2014 responds to messages\nbot think      # autonomous \u2014 thinks continuously\nbot chat       # interactive CLI session',
+    code: "bot gateway    # reactive \u2014 responds to messages\nbot think      # autonomous \u2014 thinks continuously\nbot chat       # interactive CLI session",
   },
   {
     title: "Or use Docker",
@@ -51,12 +51,12 @@ export function Install() {
         <div className="mx-auto max-w-2xl space-y-7">
           {steps.map((s, i) => (
             <div key={s.title} className="flex gap-5">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent-glow bg-accent-dim text-sm font-bold text-accent">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-xs font-bold text-muted">
                 {i + 1}
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="mb-2 text-base font-semibold">{s.title}</h3>
-                <pre className="overflow-x-auto rounded-lg border border-border bg-code p-3 font-mono text-[13px] leading-6 text-accent">
+                <h3 className="mb-2 text-[15px] font-semibold">{s.title}</h3>
+                <pre className="overflow-x-auto rounded-md border border-border bg-code p-3 font-mono text-[13px] leading-6 text-accent">
                   {s.code}
                 </pre>
                 {s.note && (

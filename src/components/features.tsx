@@ -53,14 +53,14 @@ export function Features() {
         <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">
           Built for autonomy, designed for control.
         </h2>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-xl border border-border bg-card p-7 transition-colors hover:border-accent-glow"
+              className="rounded-lg border border-border bg-card p-6 transition-colors hover:bg-surface"
             >
-              <span className="mb-3 block text-[28px]">{f.icon}</span>
-              <h3 className="mb-2 text-[17px] font-semibold">{f.title}</h3>
+              <span className="mb-3 block text-[24px] grayscale-[40%]">{f.icon}</span>
+              <h3 className="mb-2 text-[15px] font-semibold">{f.title}</h3>
               <p className="text-sm leading-relaxed text-muted">{f.desc}</p>
             </div>
           ))}

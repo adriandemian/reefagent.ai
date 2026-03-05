@@ -17,7 +17,7 @@ export function CTA() {
             href={REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3 text-[15px] font-semibold text-black transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-md bg-accent px-7 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-accent/80"
           >
             <GithubIcon className="h-[18px] w-[18px]" />
             Star on GitHub
@@ -26,7 +26,7 @@ export function CTA() {
             href={`${REPO_URL}/tree/main/docs`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-7 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-accent"
+            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-7 py-3 text-[15px] font-semibold text-foreground transition-colors hover:bg-surface"
           >
             Read the Docs
           </a>

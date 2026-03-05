@@ -23,7 +23,7 @@ const channels = [
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-muted">
+    <span className="rounded-md border border-border bg-card px-4 py-2 text-sm text-muted">
       {children}
     </span>
   );
@@ -49,14 +49,14 @@ export function Integrations() {
         </p>
 
         <SectionLabel>Providers</SectionLabel>
-        <div className="mb-7 flex flex-wrap justify-center gap-3">
+        <div className="mb-7 flex flex-wrap justify-center gap-2">
           {providers.map((p) => (
             <Tag key={p}>{p}</Tag>
           ))}
         </div>
 
         <SectionLabel>Channels</SectionLabel>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-2">
           {channels.map((c) => (
             <Tag key={c}>{c}</Tag>
           ))}
