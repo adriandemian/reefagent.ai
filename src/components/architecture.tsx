@@ -1,28 +1,64 @@
-const diagram = `\u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
-\u2502                          reefagent                              \u2502
-\u2502                                                                 \u2502
-\u2502  Channels          Core                    Storage              \u2502
-\u2502  \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510   \u2502
-\u2502  \u2502 Telegram \u2502     \u2502  Model Router    \u2502    \u2502  SQLite + WAL  \u2502   \u2502
-\u2502  \u2502 Slack    \u2502\u2500\u2500\u2500\u25B6\u2502  (multi-provider)\u2502    \u2502                \u2502   \u2502
-\u2502  \u2502 WhatsApp \u2502     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2502  Episodic      \u2502   \u2502
-\u2502  \u2502 Discord  \u2502              \u2502              \u2502  Semantic       \u2502   \u2502
-\u2502  \u2502 Matrix   \u2502     \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25BC\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u2502  Procedural    \u2502   \u2502
-\u2502  \u2502 Signal   \u2502     \u2502  Agent Runner    \u2502\u2500\u2500\u25B6\u2502                \u2502   \u2502
-\u2502  \u2502 CLI      \u2502     \u2502  + Tool Sandbox  \u2502    \u2502  FTS5 + Vec    \u2502   \u2502
-\u2502  \u2502 REST API \u2502     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2502  Hybrid Search \u2502   \u2502
-\u2502  \u2502 WebSocket\u2502              \u2502              \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518   \u2502
-\u2502  \u2502 MCP      \u2502     \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25BC\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510                         \u2502
-\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2502  Think Loop      \u2502    \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510   \u2502
-\u2502                   \u2502  (autonomous)    \u2502\u2500\u2500\u25B6\u2502  Goal Engine   \u2502   \u2502
-\u2502  Integrations     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2502  (hierarchical)\u2502   \u2502
-\u2502  \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510              \u2502              \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518   \u2502
-\u2502  \u2502 Plugins  \u2502     \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25BC\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510                         \u2502
-\u2502  \u2502 Webhooks \u2502     \u2502  Soul & Identity \u2502    \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510   \u2502
-\u2502  \u2502 Cron     \u2502     \u2502  (self-evolving) \u2502    \u2502  Safety Tiers  \u2502   \u2502
-\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2502  Circuit Break \u2502   \u2502
-\u2502                                           \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518   \u2502
-\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518`;
+function Box({
+  label,
+  items,
+  className,
+}: {
+  label: string;
+  items: string[];
+  className?: string;
+}) {
+  return (
+    <div
+      className={`rounded-lg border border-border bg-card/50 p-4 ${className ?? ""}`}
+    >
+      <div className="mb-2 text-xs font-medium uppercase tracking-widest text-accent">
+        {label}
+      </div>
+      <div className="space-y-1">
+        {items.map((item) => (
+          <div key={item} className="text-sm text-muted">
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CoreBox({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) {
+  return (
+    <div className="rounded-lg border border-accent/20 bg-accent/5 px-5 py-3 text-center">
+      <div className="text-sm font-semibold text-foreground">{title}</div>
+      <div className="text-xs text-muted">{subtitle}</div>
+    </div>
+  );
+}
+
+function Arrow() {
+  return (
+    <div className="flex justify-center py-1">
+      <svg width="12" height="20" viewBox="0 0 12 20" className="text-accent/40">
+        <path d="M6 0 L6 14 M2 10 L6 18 L10 10" stroke="currentColor" fill="none" strokeWidth="1.5" />
+      </svg>
+    </div>
+  );
+}
+
+function HArrow() {
+  return (
+    <div className="flex items-center px-1">
+      <svg width="24" height="12" viewBox="0 0 24 12" className="text-accent/40">
+        <path d="M0 6 L18 6 M14 2 L22 6 L14 10" stroke="currentColor" fill="none" strokeWidth="1.5" />
+      </svg>
+    </div>
+  );
+}
 
 export function Architecture() {
   return (
@@ -31,8 +67,94 @@ export function Architecture() {
         <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
           Architecture
         </h2>
-        <div className="overflow-x-auto rounded-xl border border-border bg-code p-8 text-center font-mono text-[13px] leading-snug whitespace-pre text-muted">
-          {diagram}
+
+        <div className="overflow-hidden rounded-xl border border-border bg-code p-6 sm:p-8">
+          {/* Title */}
+          <div className="mb-6 text-center text-lg font-bold text-foreground/80">
+            reefagent
+          </div>
+
+          {/* Main 3-column layout */}
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-[1fr_auto_1.2fr_auto_1fr]">
+            {/* Left column — Channels + Integrations */}
+            <div className="space-y-4">
+              <Box
+                label="Channels"
+                items={[
+                  "Telegram",
+                  "Slack",
+                  "WhatsApp",
+                  "Discord",
+                  "Matrix",
+                  "Signal",
+                  "CLI",
+                  "REST API",
+                  "WebSocket",
+                  "MCP",
+                ]}
+              />
+              <Box
+                label="Integrations"
+                items={["Plugins", "Webhooks", "Cron"]}
+              />
+            </div>
+
+            {/* Arrow left → center */}
+            <div className="hidden items-center md:flex">
+              <HArrow />
+            </div>
+
+            {/* Center column — Core pipeline */}
+            <div className="flex flex-col items-stretch justify-center space-y-1">
+              <CoreBox
+                title="Model Router"
+                subtitle="multi-provider"
+              />
+              <Arrow />
+              <CoreBox
+                title="Agent Runner"
+                subtitle="+ Tool Sandbox"
+              />
+              <Arrow />
+              <CoreBox
+                title="Think Loop"
+                subtitle="autonomous"
+              />
+              <Arrow />
+              <CoreBox
+                title="Soul & Identity"
+                subtitle="self-evolving"
+              />
+            </div>
+
+            {/* Arrow center → right */}
+            <div className="hidden items-center md:flex">
+              <HArrow />
+            </div>
+
+            {/* Right column — Storage + Safety */}
+            <div className="space-y-4">
+              <Box
+                label="Storage"
+                items={[
+                  "SQLite + WAL",
+                  "Episodic",
+                  "Semantic",
+                  "Procedural",
+                  "FTS5 + Vec",
+                  "Hybrid Search",
+                ]}
+              />
+              <Box
+                label="Goals"
+                items={["Goal Engine", "Hierarchical"]}
+              />
+              <Box
+                label="Safety"
+                items={["Safety Tiers", "Circuit Breakers"]}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
