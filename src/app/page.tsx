@@ -6,6 +6,7 @@ import { Install } from "@/components/install";
 import { Architecture } from "@/components/architecture";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
+import { FadeIn } from "@/components/fade-in";
 
 export default function Home() {
   return (
@@ -13,11 +14,21 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Features />
-        <Integrations />
-        <Install />
-        <Architecture />
-        <CTA />
+        <FadeIn>
+          <Features />
+        </FadeIn>
+        <FadeIn>
+          <Integrations />
+        </FadeIn>
+        <FadeIn>
+          <Install />
+        </FadeIn>
+        <FadeIn>
+          <Architecture />
+        </FadeIn>
+        <FadeIn>
+          <CTA />
+        </FadeIn>
       </main>
       <Footer />
     </>

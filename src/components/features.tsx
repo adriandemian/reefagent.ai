@@ -48,18 +48,18 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="px-6 py-20">
+    <section id="features" className="px-6 pt-28 pb-20">
       <div className="mx-auto max-w-5xl">
         <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">
           Built for autonomy, designed for control.
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-xl bg-border sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-lg border border-border bg-card p-6 transition-colors hover:bg-surface"
+              className="bg-surface p-6 transition-colors duration-150 hover:bg-surface-hover"
             >
-              <span className="mb-3 block text-[24px] grayscale-[40%]">{f.icon}</span>
+              <span className="mb-3 block text-[24px]">{f.icon}</span>
               <h3 className="mb-2 text-[15px] font-semibold">{f.title}</h3>
               <p className="text-sm leading-relaxed text-muted">{f.desc}</p>
             </div>

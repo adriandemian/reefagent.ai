@@ -1,20 +1,9 @@
 const providers = [
-  "OpenAI",
   "Anthropic",
-  "Google Gemini",
-  "Groq",
-  "Together AI",
-  "DeepSeek",
-  "Ollama (local)",
 ];
 
 const channels = [
   "Telegram",
-  "Slack",
-  "WhatsApp",
-  "Discord",
-  "Matrix",
-  "Signal",
   "REST API",
   "WebSocket",
   "MCP",
@@ -23,7 +12,7 @@ const channels = [
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-md border border-border bg-card px-4 py-2 text-sm text-muted">
+    <span className="rounded-lg border border-border bg-surface px-4 py-2 text-sm text-muted transition-colors duration-150 hover:border-border-bright hover:text-foreground">
       {children}
     </span>
   );
@@ -31,7 +20,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 text-center text-xs font-medium uppercase tracking-widest text-muted">
+    <p className="mb-3 text-center text-xs font-medium uppercase tracking-widest text-dim">
       {children}
     </p>
   );

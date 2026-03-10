@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Background } from "@/components/background";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -54,7 +55,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <Background />
+        <div className="relative z-[1]">{children}</div>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 const steps = [
   {
     title: "Clone the repository",
-    code: "git clone https://github.com/adriandemian/reefbot.ai.git\ncd reefbot.ai",
+    code: "git clone https://github.com/aigentive/reefagent.git\ncd reefagent",
   },
   {
     title: "Install dependencies",
@@ -23,7 +23,7 @@ const steps = [
   },
   {
     title: "Configure your agent",
-    code: 'cp config.example.yaml ~/.reefbot/config.yaml\nexport OPENAI_API_KEY="sk-..."',
+    code: 'cp config.example.yaml ~/.reefagent/config.yaml\nexport OPENAI_API_KEY="sk-..."',
     note: "Works with any supported provider. Set the matching API key and model prefix.",
   },
   {
@@ -51,12 +51,12 @@ export function Install() {
         <div className="mx-auto max-w-2xl space-y-7">
           {steps.map((s, i) => (
             <div key={s.title} className="flex gap-5">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-xs font-bold text-muted">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-surface text-xs font-bold text-dim transition-colors duration-150 hover:border-border-bright hover:text-muted">
                 {i + 1}
               </div>
               <div className="min-w-0 flex-1">
                 <h3 className="mb-2 text-[15px] font-semibold">{s.title}</h3>
-                <pre className="overflow-x-auto rounded-md border border-border bg-code p-3 font-mono text-[13px] leading-6 text-accent">
+                <pre className="overflow-x-auto rounded-lg border border-border bg-code p-3 font-mono text-[13px] leading-6 text-accent">
                   {s.code}
                 </pre>
                 {s.note && (

@@ -1,3 +1,11 @@
+export function PulseIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M1 8h3l2-5 3 10 2-5h4" />
+    </svg>
+  );
+}
+
 export function GithubIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 16 16" fill="currentColor" className={className}>

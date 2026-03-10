@@ -1,10 +1,26 @@
-import { GithubIcon } from "./icons";
+"use client";
 
-const REPO_URL = "https://github.com/adriandemian/reefbot.ai";
+import { useEffect, useState } from "react";
+import { PulseIcon } from "./icons";
 
 export function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-10 border-b border-border bg-surface">
+    <nav
+      className={`sticky top-0 z-10 border-b transition-all duration-200 ${
+        scrolled
+          ? "border-border bg-background/80 backdrop-blur-xl"
+          : "border-transparent bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <div className="text-lg font-bold">
           <span className="text-accent">reef</span>
@@ -24,13 +40,13 @@ export function Nav() {
             Install
           </a>
           <a
-            href={REPO_URL}
+            href="https://reefagent.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface"
+            className="hidden items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground sm:inline-flex"
           >
-            <GithubIcon className="h-[18px] w-[18px]" />
-            GitHub
+            <PulseIcon className="h-[14px] w-[14px]" />
+            Live
           </a>
         </div>
       </div>

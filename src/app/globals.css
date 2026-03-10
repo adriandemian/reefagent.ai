@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #101012;
-  --color-foreground: #e0e0e8;
-  --color-muted: #8a8a9a;
-  --color-accent: #8fbcab;
-  --color-accent-dim: #8fbcab20;
-  --color-card: #1a1a1f;
-  --color-surface: #222228;
-  --color-border: #32323c;
-  --color-code: #151518;
+  --color-background: #0c0c0c;
+  --color-foreground: #ededed;
+  --color-muted: #a0a0a0;
+  --color-dim: #666;
+  --color-accent: #5eead4;
+  --color-accent-dim: #5eead420;
+  --color-accent-glow: #5eead430;
+  --color-card: #161616;
+  --color-surface: #161616;
+  --color-surface-hover: #1c1c1c;
+  --color-border: #222;
+  --color-border-bright: #333;
+  --color-code: #111;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--color-background);
-  color: var(--color-foreground);
+  color: var(--color-muted);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: var(--color-accent);
-  color: #101012;
+  color: #0c0c0c;
+}
+
+/* Headings always white */
+h1, h2, h3 {
+  color: var(--color-foreground);
+}
+
+/* Hero load sequence */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: hero-fade-up 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-delay-1 { animation-delay: 0.1s; }
+.hero-delay-2 { animation-delay: 0.2s; }
+.hero-delay-3 { animation-delay: 0.35s; }
+.hero-delay-4 { animation-delay: 0.45s; }
+.hero-delay-5 { animation-delay: 0.55s; }
+
+/* Terminal cursor blink */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Scroll fade-in */
+.fade-in-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background — reef image with gradient mask */
+.bg-reef-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1100px;
+  background: url('/images/reef-bg.png') center top / cover no-repeat;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.1) 80%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.1) 80%, transparent 95%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-reef-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  background: url('/images/reef-bg.png') center top / cover no-repeat;
+  transform: scaleY(-1);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate {
+    opacity: 1;
+    animation: none;
+  }
+
+  .fade-in-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .cursor-blink {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
 }

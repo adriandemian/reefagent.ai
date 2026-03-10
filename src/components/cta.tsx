@@ -1,10 +1,8 @@
-import { GithubIcon } from "./icons";
-
-const REPO_URL = "https://github.com/adriandemian/reefbot.ai";
+import { PulseIcon } from "./icons";
 
 export function CTA() {
   return (
-    <section className="border-t border-border px-6 py-20 text-center">
+    <section className="relative px-6 py-20 text-center">
       <div className="mx-auto max-w-5xl">
         <h2 className="mb-4 text-3xl font-bold tracking-tight">
           Ready to deploy your own agent?
@@ -14,21 +12,19 @@ export function CTA() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <a
-            href={REPO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-accent px-7 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-accent/80"
+            href="#install"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3 text-[15px] font-semibold text-background transition-opacity hover:opacity-85"
           >
-            <GithubIcon className="h-[18px] w-[18px]" />
-            Star on GitHub
+            Get Started
           </a>
           <a
-            href={`${REPO_URL}/tree/main/docs`}
+            href="https://reefagent.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-7 py-3 text-[15px] font-semibold text-foreground transition-colors hover:bg-surface"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-7 py-3 text-[15px] font-semibold text-dim transition-colors hover:border-border-bright hover:text-muted"
           >
-            Read the Docs
+            <PulseIcon className="h-[18px] w-[18px]" />
+            Live
           </a>
         </div>
       </div>
