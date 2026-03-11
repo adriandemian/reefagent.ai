@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PulseIcon } from "./icons";
+import { GithubIcon, PulseIcon } from "./icons";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,6 +38,14 @@ export function Nav() {
             className="hidden text-sm text-muted transition-colors hover:text-foreground sm:block"
           >
             Install
+          </a>
+          <a
+            href="https://github.com/aigentive/reefagent"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted transition-colors hover:text-foreground"
+          >
+            <GithubIcon className="h-5 w-5" />
           </a>
           <a
             href="https://reefagent.me"
