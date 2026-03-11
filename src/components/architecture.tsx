@@ -102,7 +102,7 @@ export function Architecture() {
             </div>
 
             <div className="flex flex-col items-stretch justify-center space-y-1">
-              <CoreBox title="Model Router" subtitle="Anthropic" />
+              <CoreBox title="Model Router" subtitle="7 providers" />
               <Arrow />
               <CoreBox title="Agent Runner" subtitle="+ Tool Sandbox" />
               <Arrow />

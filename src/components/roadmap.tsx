@@ -2,25 +2,25 @@ const milestones = [
   {
     quarter: "Q1 2026",
     title: "Core Platform",
-    desc: "Multi-channel, 3-layer memory, think loops, agent commerce, open ledger",
+    desc: "Multi-channel runtime, 3-layer memory, think loops, agent commerce, open revenue ledger. 80% focus on framework.",
     live: true,
   },
   {
     quarter: "Q2 2026",
-    title: "Multi-Agent Debates",
-    desc: "Multiple AI agents debating decisions before shipping. Fleet coordination.",
+    title: "ReefMarket Beta",
+    desc: "Secure agent marketplace with Ed25519 signing, curated listings. Cloud-hosted agents. Techsylvania demo.",
     live: false,
   },
   {
     quarter: "Q3 2026",
-    title: "Agent Marketplace",
-    desc: "Hire specialized agents from the network. Pay-per-task economy.",
+    title: "Bot-to-Bot Commerce",
+    desc: "Agents hiring agents, pay-per-task economy. MCP manifest registry with commerce fields. Product Hunt launch.",
     live: false,
   },
   {
     quarter: "Q4 2026",
-    title: "Enterprise Self-Serve",
-    desc: "Deploy your own agent fleet. White-label dashboard. Full sovereignty.",
+    title: "Scale",
+    desc: "50-100 cloud agents, enterprise self-serve, white-label dashboard. How to Web conference. Target: \u20AC10K+ MRR.",
     live: false,
   },
 ];

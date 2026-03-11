@@ -1,13 +1,24 @@
 const providers = [
   "Anthropic",
+  "OpenAI",
+  "Google",
+  "Groq",
+  "Together",
+  "DeepSeek",
+  "Ollama",
 ];
 
 const channels = [
   "Telegram",
+  "Slack",
+  "WhatsApp",
+  "Discord",
+  "Matrix",
+  "Signal",
+  "CLI",
   "REST API",
   "WebSocket",
   "MCP",
-  "CLI",
 ];
 
 function Tag({ children }: { children: React.ReactNode }) {
@@ -34,7 +45,8 @@ export function Integrations() {
           Works with everything.
         </h2>
         <p className="mb-10 text-center text-base text-muted">
-          Connect any provider, deploy to any channel.
+          Seven providers, ten channels. Auto-detected by model prefix — swap
+          without code changes.
         </p>
 
         <SectionLabel>Providers</SectionLabel>

@@ -2,6 +2,7 @@ import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { Features } from "@/components/features";
+import { Sovereignty } from "@/components/sovereignty";
 import { ComparisonTable } from "@/components/comparison-table";
 import { SocialProof } from "@/components/social-proof";
 import { Integrations } from "@/components/integrations";
@@ -24,6 +25,9 @@ export default function Home() {
         </FadeIn>
         <FadeIn>
           <Features />
+        </FadeIn>
+        <FadeIn>
+          <Sovereignty />
         </FadeIn>
         <FadeIn>
           <ComparisonTable />

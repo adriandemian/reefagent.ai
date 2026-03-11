@@ -12,14 +12,20 @@ const rows = [
     cloud: "Their cloud",
   },
   {
+    label: "Security model",
+    reef: "Ed25519 signing, AST scanning, sandboxing",
+    platform: "Platform-managed",
+    cloud: "Platform-managed",
+  },
+  {
     label: "Revenue transparency",
-    reef: "Open Stripe ledger",
+    reef: "Stripe-verified transactions",
     platform: "None",
     cloud: "None",
   },
   {
     label: "Vendor lock-in",
-    reef: "None \u2014 full source",
+    reef: "None \u2014 full source, AGPL v3",
     platform: "Editor-dependent",
     cloud: "GPU-dependent",
   },

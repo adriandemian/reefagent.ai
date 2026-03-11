@@ -6,19 +6,19 @@ export function Hero() {
     <section className="px-6 pt-28 pb-32 text-center">
       <div className="mx-auto max-w-5xl">
         <span className="hero-animate hero-delay-1 mb-6 inline-block rounded-md border border-border bg-card px-4 py-1 text-[13px] font-medium text-dim">
-          Open Source AI Agent Framework
+          Open Source &middot; AGPL v3
         </span>
 
         <h1 className="hero-animate hero-delay-2 mb-5 text-4xl leading-[1.1] font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-          Your AI agent,
+          The agent runtime
           <br />
-          <span className="text-accent">your infrastructure.</span>
+          <span className="text-accent">that stays yours.</span>
         </h1>
 
         <p className="hero-animate hero-delay-3 mx-auto mb-9 max-w-xl text-lg text-muted">
-          Self-hosted AI agent framework with three-layer memory, autonomous
-          thinking, multi-provider support, and 10+ communication channels. No
-          vendor lock-in.
+          Your agents. Your data. Your revenue. No platform cut. Self-hosted
+          framework with three-layer memory, autonomous thinking, and 10+
+          channels.
         </p>
 
         <div className="hero-animate hero-delay-4 flex flex-wrap justify-center gap-3">

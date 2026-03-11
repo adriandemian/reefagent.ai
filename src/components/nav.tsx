@@ -34,10 +34,28 @@ export function Nav() {
             Features
           </a>
           <a
+            href="#compare"
+            className="hidden text-sm text-muted transition-colors hover:text-foreground sm:block"
+          >
+            Compare
+          </a>
+          <a
             href="#install"
             className="hidden text-sm text-muted transition-colors hover:text-foreground sm:block"
           >
             Install
+          </a>
+          <a
+            href="#roadmap"
+            className="hidden text-sm text-muted transition-colors hover:text-foreground sm:block"
+          >
+            Roadmap
+          </a>
+          <a
+            href="#faq"
+            className="hidden text-sm text-muted transition-colors hover:text-foreground sm:block"
+          >
+            FAQ
           </a>
           <a
             href="https://github.com/aigentive/reefagent"
