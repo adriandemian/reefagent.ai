@@ -36,22 +36,51 @@ export function Roadmap() {
           Everything in Q1 is live and in production. Everything else is in
           active development &mdash; not slides, not pitch decks.
         </p>
-        <div className="grid gap-px overflow-hidden rounded-xl bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {milestones.map((m) => (
-            <div
-              key={m.quarter}
-              className={`p-5 ${m.live ? "border-l-2 border-l-green-500 bg-surface-hover" : "bg-surface"}`}
-            >
-              <div className="mb-3 flex items-center gap-2 font-mono text-xs font-semibold text-dim">
-                {m.quarter}
-                {m.live && (
-                  <span className="rounded border border-green-500/20 bg-green-500/10 px-1.5 py-0.5 font-mono text-[10px] font-bold tracking-wider text-green-500">
-                    LIVE
-                  </span>
+
+        <div className="mx-auto max-w-2xl">
+          {milestones.map((m, i) => (
+            <div key={m.quarter} className="relative flex gap-6">
+              {/* Vertical line + marker */}
+              <div className="flex flex-col items-center">
+                {/* Dot */}
+                <div
+                  className={`relative z-[1] mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 ${
+                    m.live
+                      ? "border-green-500 bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.4)]"
+                      : "border-border bg-background"
+                  }`}
+                >
+                  {m.live && (
+                    <div className="h-1.5 w-1.5 rounded-full bg-background" />
+                  )}
+                </div>
+                {/* Connector line */}
+                {i < milestones.length - 1 && (
+                  <div
+                    className={`w-px flex-1 ${
+                      m.live
+                        ? "bg-gradient-to-b from-green-500/60 to-border"
+                        : "bg-border"
+                    }`}
+                  />
                 )}
               </div>
-              <h3 className="mb-1.5 text-sm font-semibold">{m.title}</h3>
-              <p className="text-xs leading-relaxed text-muted">{m.desc}</p>
+
+              {/* Content */}
+              <div className={`pb-10 ${i === milestones.length - 1 ? "pb-0" : ""}`}>
+                <div className="mb-2 flex items-center gap-2.5">
+                  <span className="font-mono text-xs font-semibold text-dim">
+                    {m.quarter}
+                  </span>
+                  {m.live && (
+                    <span className="rounded border border-green-500/20 bg-green-500/10 px-1.5 py-0.5 font-mono text-[10px] font-bold tracking-wider text-green-500">
+                      LIVE
+                    </span>
+                  )}
+                </div>
+                <h3 className="mb-1.5 text-[15px] font-semibold">{m.title}</h3>
+                <p className="text-sm leading-relaxed text-muted">{m.desc}</p>
+              </div>
             </div>
           ))}
         </div>

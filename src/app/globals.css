@@ -108,6 +108,31 @@ h1, h2, h3 {
   z-index: 0;
 }
 
+/* FAQ accordion */
+.faq-item summary {
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-answer {
+  overflow: hidden;
+  animation: faq-open 200ms ease-out;
+}
+
+@keyframes faq-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-animate {

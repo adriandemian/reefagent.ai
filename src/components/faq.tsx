@@ -45,10 +45,23 @@ export function FAQ() {
         </p>
         <div className="mx-auto max-w-2xl border-t border-border">
           {faqs.map((faq) => (
-            <div key={faq.q} className="border-b border-border py-5">
-              <h3 className="mb-2 text-[15px] font-semibold">{faq.q}</h3>
-              <p className="text-sm leading-relaxed text-muted">{faq.a}</p>
-            </div>
+            <details key={faq.q} className="faq-item group border-b border-border">
+              <summary className="flex cursor-pointer items-center justify-between py-5 text-[15px] font-semibold text-foreground transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
+                <span>{faq.q}</span>
+                <svg
+                  className="ml-4 h-4 w-4 shrink-0 text-dim transition-transform duration-200 group-open:rotate-45"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M8 3v10M3 8h10" />
+                </svg>
+              </summary>
+              <div className="faq-answer pb-5">
+                <p className="text-sm leading-relaxed text-muted">{faq.a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </div>
